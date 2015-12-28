@@ -21,29 +21,29 @@ int main()
     nameFiles.push_back("TimeHash.txt");
     nameFiles.push_back("TimeSlowN2.txt");
     nameFiles.push_back("TimeSlowN3.txt");
-    cin>>n;
-    cin.get();
-    for(int i=0;i<n;++i)
-    {
-        getline(cin, s);
-        cout <<algo::countPalindrome(s, algo::t_PalindromicTree) << endl;
-    }
-//    for(size_t i = 0; i < nameFiles.size(); ++i)
+//    cin>>n;
+//    cin.get();
+//    for(int i=0;i<n;++i)
 //    {
-//        in.open("examples.txt");
-//        out.open(nameFiles[i]+"all.txt");
-//        time_start();
-//        int j = 0;
-//        while(in)//100000
-//        {
-//            getline(in, s);
-//            if(s.length() > 0)
-//                algo::countPalindrome(s, static_cast<algo::ChooseAlgo>(i));
-//        }
-//        out << time_stop() << " msec";
-//        cout << time_stop() << " msec" << endl;
-//        out.close();
-//        in.close();
+//        getline(cin, s);
+//        cout <<algo::countPalindrome(s, algo::t_PalindromicTree) << endl;
 //    }
+    for(size_t i = 0; i < nameFiles.size(); ++i)
+    {
+        in.open("examples.txt");
+        out.open("AllData"+nameFiles[i]);
+        time_start();
+        int j = 0;
+        while(j++ < 100000)//100000
+        {
+            getline(in, s);
+            if(s.length() > 0)
+                algo::countPalindrome(s, static_cast<algo::ChooseAlgo>(i));
+        }
+        out << time_stop() << " msec";
+        cout << time_stop() << " msec" << endl;
+        out.close();
+        in.close();
+    }
     return 0;
 }

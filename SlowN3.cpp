@@ -20,7 +20,6 @@ bool SlowN3::isPalindrom(int leftBorder, int rightBorder)
     return true;
 }
 
-
 long long SlowN3::operator ()()
 {
     for(int leftBorder = 0;leftBorder < str.length(); ++leftBorder)
